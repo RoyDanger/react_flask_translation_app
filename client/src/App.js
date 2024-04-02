@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from "react"
+// App.js
+import React from 'react';
+import FileInputComponent from './components/FileInputComponent';
+import './App.css';
 
-
-export default function App() {
-
-  const [data, setData] = useState([{}])
-
-  useEffect (() => {
-    fetch("/uploadedFile").then(
-      res => res.json()
-    ).then(
-      data => {
-        setData(data)
-        console.log(data)
-      }
-    )
-  },[])
+function App() {
   return (
-    <div>
-      
+    <div className="App">
+      <FileInputComponent />
     </div>
-  )
+  );
 }
+
+export default App;
